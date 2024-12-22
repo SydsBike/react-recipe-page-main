@@ -14,7 +14,7 @@ function App() {
     };
     window.addEventListener("resize", handleSize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleSize);
     };
   }, []);
 
