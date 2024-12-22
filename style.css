@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap");
+:root {
+  --ff-copy-outfit: "Outfit", sans-serif;
+  --ff-h2-young: "Young Serif", serif;
+  --ff-list: "Gabarito", serif;
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-stone-100: hsl(30, 54%, 90%);
+  --clr-stone-150: hsl(30, 18%, 87%);
+  --clr--Stone-600: hsl(30, 10%, 34%);
+  --clr--Stone-900: hsl(24, 5%, 18%);
+  --clr--Brown-800: hsl(14, 45%, 36%);
+  --clr--Rose-800: hsl(332, 51%, 32%);
+  --clr--Rose-50: hsl(330, 100%, 98%);
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-primary: 1rem;
+  --fs-fluid-font-36-40: clamp(2.25rem, 2.162rem + 0.3756vw, 2.5rem);
+
+  font-size: 16px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* utility classes */
+
+.grid {
+  display: grid;
+}
+.section-gap {
+  gap: 1.5rem;
+}
+
+.list-gap {
+  gap: 0.5rem;
+}
+
+.ff-young {
+  font-family: var(--ff-h2-young);
+}
+
+.ff-gab {
+  font-family: var(--ff-list);
+}
+
+.fs-h1 {
+  font-size: var(--fs-fluid-font-36-40);
+}
+
+.fs-20 {
+  font-size: 1.25rem;
+}
+
+.fs-28 {
+  font-size: 1.75rem;
+}
+
+.bg-50 {
+  background-color: var(--clr--Rose-50);
+}
+
+.bg-100 {
+  background-color: var(--clr-white);
+}
+.clr-600 {
+  color: var(--clr--Stone-600);
+}
+
+.clr-br-800 {
+  color: var(--clr--Brown-800);
+}
+.clr-800 {
+  color: var(--clr--Rose-800);
+}
+.clr-900 {
+  color: var(--clr--Stone-900);
+}
+
+.fw-reg {
+  font-weight: var(--fw-regular);
+}
+
+.fw-med {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+body {
+  background-color: var(--clr-stone-150);
+  color: var(--clr--Stone-600);
+  font-family: var(--ff-copy-outfit);
+
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-primary);
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: 736px;
+  padding-top: clamp(0rem, -0.8803rem + 3.7559vw, 2.5rem);
+}
+
+.image-container {
+  margin-inline: clamp(0rem, -0.8803rem + 3.7559vw, 2.5rem);
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: grid;
+  gap: 2rem;
+  padding-inline: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+  padding-block: 2.5rem;
+}
+
+@media (min-width: 500px) {
+  .card {
+    margin-top: clamp(0rem, -4.2553rem + 13.617vw, 8rem);
+    border-radius: 1.5rem;
+  }
+  .image-container {
+    border-radius: 0.75rem;
+  }
+  .title-reg::before {
+    content: "Simple ";
+  }
+}
+
+.prep {
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.prep-list > li > span {
+  font-weight: var(--fw-bold);
+}
+
+.prep-list > li::before {
+  color: var(--clr--Rose-800);
+  font-weight: bold;
+  content: "\2022";
+  padding-right: 1rem;
+}
+
+.ingredients-list > li::before {
+  color: var(--clr--Brown-800);
+  content: "\2022";
+  padding-right: 1rem;
+}
+
+.instructions-list {
+  counter-reset: item;
+}
+
+.instructions-list {
+  counter-reset: item;
+}
+
+.instructions-list > li {
+  display: flex;
+}
+.instructions-list > li::before {
+  content: counter(item) ". "; /* Display the counter value */
+  counter-increment: item; /* Increment the counter for each li */
+  padding-right: 1rem;
+  font-family: var(--ff-copy-outfit);
+  font-weight: var(--fw-bold);
+  color: var(--clr--Brown-800);
+}
+
+.li > span {
+  font-weight: var(--fw-bold);
+}
+
+.table {
+  display: grid;
+  gap: 0.75rem;
+}
+.table > tr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--clr-stone-150);
+}
+
+
+.link {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
